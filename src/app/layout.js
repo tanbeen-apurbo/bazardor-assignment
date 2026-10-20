@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import { Suspense } from "react";
+import MarqueePage from "../components/Marquee";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
         
         
         <Suspense fallback='loading....'><Navbar ></Navbar></Suspense>
+        <Suspense><MarqueePage></MarqueePage></Suspense>
         <main>{children}</main>
         </body>
     </html>
