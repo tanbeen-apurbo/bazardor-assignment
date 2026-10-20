@@ -107,7 +107,7 @@ export default function SignUpPage() {
       }
 
       toast.success("অ্যাকাউন্ট তৈরি হয়েছে।");
-      router.replace("/");
+      router.replace("/sign-in");
       router.refresh();
     } catch {
       showError("একটি সমস্যা হয়েছে। আবার চেষ্টা করুন।");

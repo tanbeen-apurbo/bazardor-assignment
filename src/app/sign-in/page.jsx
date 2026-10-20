@@ -101,7 +101,7 @@ export default function SignInPage() {
       const result = await authClient.signIn.social({
         provider,
         callbackURL: "/",
-        errorCallbackURL: "/signin?oauthError=1",
+        errorCallbackURL: "/sign-in?oauthError=1",
       });
 
       if (result?.error) {
@@ -203,7 +203,7 @@ export default function SignInPage() {
 
           <p className="mt-3 text-center text-[9px] leading-4">
             অ্যাকাউন্ট নেই?{" "}
-            <Link href="/signup" className="font-medium text-[#078b45] no-underline hover:underline">
+            <Link href="/sign-up" className="font-medium text-[#078b45] no-underline hover:underline">
               সাইন আপ করুন
             </Link>
           </p>
