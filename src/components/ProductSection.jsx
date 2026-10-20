@@ -70,7 +70,11 @@ const ProductSections = async () => {
         </div>
       </section>
 
-      <section aria-labelledby="all-products-heading">
+<section
+  id="all-products"
+  aria-labelledby="all-products-heading"
+  className="scroll-mt-20"
+>
         <h2
           id="all-products-heading"
           className="text-[15px] font-bold text-[#202a23]"

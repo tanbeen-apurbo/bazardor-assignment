@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import { Suspense } from "react";
 import MarqueePage from "../components/Marquee";
-
+import Footer from "../components/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,6 +34,7 @@ export default function RootLayout({ children }) {
         <Suspense fallback='loading....'><Navbar ></Navbar></Suspense>
         <Suspense><MarqueePage></MarqueePage></Suspense>
         <main>{children}</main>
+        <Suspense><Footer></Footer></Suspense>
         </body>
     </html>
   );

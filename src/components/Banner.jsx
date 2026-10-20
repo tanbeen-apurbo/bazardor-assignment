@@ -28,7 +28,7 @@ const HeroBanner = async () => {
           </p>
 
           <Link
-            href="/products"
+            href="/#all-products"
             className="mt-[18px] inline-flex h-[33px] items-center justify-center rounded-[6px] bg-[#078b45] px-4 text-[12px] font-semibold text-white no-underline shadow-[0_2px_4px_rgba(0,70,34,0.28)] transition-colors hover:bg-[#06783c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#078b45]"
           >
             সব পণ্য দেখুন
