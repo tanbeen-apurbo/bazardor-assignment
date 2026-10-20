@@ -66,7 +66,7 @@ export default function ProfileUpdatePage() {
         <div className="mx-auto max-w-[550px] rounded-xl border border-[#e1eae4] bg-[#fbfdfc] p-6 text-center">
           <p className="text-sm text-[#68716b]">এই তথ্য পরিবর্তন করতে সাইন ইন করুন।</p>
           <Link
-            href="/signin"
+            href="/sign-in"
             className="mt-4 inline-flex h-9 items-center rounded-md bg-[#078b45] px-4 text-sm font-semibold text-white no-underline"
           >
             সাইন ইন

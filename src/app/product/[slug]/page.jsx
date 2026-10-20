@@ -14,7 +14,7 @@ const session = await auth.api.getSession({
 
   if (!session?.user) {
     redirect(
-      `/signin?callbackUrl=${encodeURIComponent(`/product/${slug}`)}`
+      `/sign-in?callbackUrl=${encodeURIComponent(`/product/${slug}`)}`
     );
   }
 
