@@ -1,11 +1,22 @@
 import { Suspense } from "react";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { auth } from "../../../lib/auth";
 import ProductDetails from "../../../components/ProductDetails";
+import { headers } from "next/headers";
 
 const API_URL = "https://api.abcz.workers.dev/api/bazardor/products";
 
-async function ProductPageContent({ params }) {
+async function ProtectedProductPage({ params }) {
   const { slug } = await params;
+const session = await auth.api.getSession({
+  headers: await headers(),
+});
+
+  if (!session?.user) {
+    redirect(
+      `/signin?callbackUrl=${encodeURIComponent(`/product/${slug}`)}`
+    );
+  }
 
   const res = await fetch(API_URL, {
     next: { revalidate: 300 },
@@ -36,15 +47,12 @@ export default function ProductPage({ params }) {
   return (
     <Suspense
       fallback={
-        <div
-          className="min-h-screen bg-[#f0f6f1] px-4 py-8"
-          aria-hidden="true"
-        >
+        <div className="min-h-screen bg-[#f0f6f1] px-4 py-8" aria-hidden="true">
           <div className="mx-auto h-24 w-full max-w-[1000px] animate-pulse rounded-xl bg-[#fbfdfc]" />
         </div>
       }
     >
-      <ProductPageContent params={params} />
+      <ProtectedProductPage params={params} />
     </Suspense>
   );
 }

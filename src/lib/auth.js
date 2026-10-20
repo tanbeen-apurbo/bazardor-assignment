@@ -8,6 +8,8 @@ const db = client.db('my-bazardor-app');
 export const auth = betterAuth({
     emailAndPassword:{
         enabled:true,
+        autoSignIn:true,
+        requireEmailVerification:false,
     },
     socialProviders: {
       google: {
